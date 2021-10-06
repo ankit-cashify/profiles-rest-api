@@ -10,7 +10,7 @@ class UserProfilesManager(BaseUserManager):
         """ Create new user profiles """
         if not email:
             raise ValueError("user must have email id")
-            
+
         email = self.normalize_email(email)
         user = self.model(email=email, name=name)
 
@@ -19,7 +19,7 @@ class UserProfilesManager(BaseUserManager):
 
         return user
 
-    def create_super_user(self, email, name, password):
+    def create_superuser(self, email, name, password):
         """ Create and save super with given details """
         user = self.create_user(email, name, password)
 
